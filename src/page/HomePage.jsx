@@ -22,7 +22,7 @@ function Home() {
 
   return (
     <>
-      <Header />
+      <Header pageTitle="Page produit" />
       <main>
         <section>
           <h2>Les trois derniers produits cuisine : </h2>

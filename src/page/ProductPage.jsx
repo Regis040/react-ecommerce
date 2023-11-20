@@ -23,7 +23,7 @@ function ProductPage() {
 
   return (
     <>
-      <Header />
+      <Header pageTitle="Le produit détaillé"/>
       <main>
         {/* Si l'Id d'un produit existe, je peux afficher le détail du produit cliqué */}
         {productFound ? (

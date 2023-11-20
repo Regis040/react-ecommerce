@@ -11,7 +11,10 @@ function ProductsPage() {
 
   return (
     <>
-      <Header />
+    {/* Je glisse une valeur à mon parametre déclaré dasn sma fonction Header de ma mon "component "Header". 
+    En l'occurence, cette valeur est "Page de liste de produit" 
+    Ainsi dans le header de cette page, il apparaitra un paragraphe avec cette valeur.*/}
+      <Header pageTitle="Page de liste de produit" />
       <main>
         <h1>Les produits les moins chers pour les grosses pinces : </h1>
 {/* La foncion "productSortedByPrice" est importée  du fichier javascript*/}
