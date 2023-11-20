@@ -1,0 +1,36 @@
+header {
+    background-color: aqua;
+    
+}
+
+
+img {
+    height: 100px;
+}
+
+.navSituation {
+    background-color: red;
+    display: flex;
+    justify-content: space-between; 
+}
+
+ul {
+    display: flex;    
+}
+
+li {
+    margin-right: 2rem;
+    list-style: none;
+    color: blue;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 11px 10px 28px -1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 11px 10px 28px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 11px 10px 28px -1px rgba(0,0,0,0.75);
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+}
