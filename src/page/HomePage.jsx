@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../component/Header";
 import { productSortedByPrice, products } from "../utilis/products-utilis";
+import SideBarre from "../component/sideBarre";
 
 function Home() {
  
@@ -20,16 +21,19 @@ function Home() {
  // La fonction "productSortedByPrice" est importée. Elle trie les produits par prix croissants
   const cheapestProducts = productSortedByPrice.slice(0, 3);
 
+  const titreDuSite = document.title;
+
   return (
     <>
       <Header pageTitle="Page produit" />
       <main>
+        <SideBarre whatYouWant={titreDuSite} />
         <section>
           <h2>Les trois derniers produits cuisine : </h2>
 
           {lastPublishedKitchenProducts.map((product) => {
             return (
-              <article>
+              <article className="articlestyle">
                 <h3>{product.title}</h3>
                 <p>{product.price}</p>
                 {/* Ce lien permet à l'utilisateur de se rendre sur une autre page nommée "ProductPage" afin d'afficher les détails du produit choisi.
@@ -39,13 +43,13 @@ function Home() {
                 </Link>
               </article>
             );
-          })}
+          })} 
         </section>
         <section>
           <h3>Produits les moins chers : </h3>
           {cheapestProducts.map((product) => {
             return (
-              <article>
+              <article className="articlestyle">
                 <h3>{product.title}</h3>
                 <p>{product.price}</p>
                 <Link to={`/products/${product.id}`}>

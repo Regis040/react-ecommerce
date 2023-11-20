@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.articlestyle {
+  background-color: aquamarine;
+  width: 500px;
+  margin: auto;
+  height: 130px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}

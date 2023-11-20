@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import Header from "../component/Header";
 import { products } from "../utilis/products-utilis";
+import SideBarre from "../component/sideBarre";
 
 function ProductPage() {
   const { id } = useParams();
@@ -21,10 +22,13 @@ function ProductPage() {
     return product.id === idInt;
   });
 
+  
+
   return (
     <>
       <Header pageTitle="Le produit détaillé"/>
       <main>
+      <SideBarre whatYouWant={productFound.title}/>
         {/* Si l'Id d'un produit existe, je peux afficher le détail du produit cliqué */}
         {productFound ? (
           <article>

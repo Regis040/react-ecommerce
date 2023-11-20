@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../component/Header";
 import { productSortedByPrice, products } from "../utilis/products-utilis";
+import SideBarre from "../component/sideBarre";
 
 function ProductsPage() {
  
@@ -11,16 +12,17 @@ function ProductsPage() {
 
   return (
     <>
-    {/* Je glisse une valeur à mon parametre déclaré dasn sma fonction Header de ma mon "component "Header". 
+    {/* Je glisse une valeur à mon parametre déclaré dans ma fonction Header dans mon "component "Header". 
     En l'occurence, cette valeur est "Page de liste de produit" 
     Ainsi dans le header de cette page, il apparaitra un paragraphe avec cette valeur.*/}
       <Header pageTitle="Page de liste de produit" />
       <main>
+      <SideBarre whatYouWant="Vous consultez la listes des produits" />
         <h1>Les produits les moins chers pour les grosses pinces : </h1>
 {/* La foncion "productSortedByPrice" est importée  du fichier javascript*/}
         {productSortedByPrice.map((product) => {
           return (
-            <article>
+            <article className="articlestyle">
               <h2>{product.title}</h2>
               <p>{product.price} euros</p>
               <Link to={`/products/${product.id}`}>

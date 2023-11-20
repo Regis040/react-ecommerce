@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import './Header.scss';
 
-// Je donne un paramètre à mon header, ici je choisi de l'appeler "pageTitle"
-// Ce paramètre sera defini à sur chauqe page ou le header doit apparaitre et sa valeur appraitra au sein du paragraphe
+// Je donne un paramètre à ma fonction Header, ici je choisis de l'appeler "pageTitle"
+// Ce paramètre sera defini  sur chaque page ou le header doit apparaitre et sa valeur aparaitra au sein du paragraphe
 // que j'ai logé plus bas dans cette page
 
-function Header({pageTitle}) {
+function Header({pageTitle, isUserAuthenticated}) {
     return (
       <header>
  
@@ -25,7 +25,7 @@ function Header({pageTitle}) {
             </li>
           </ul>
         </nav>
-        <p>{pageTitle}</p>
+        <h1>{pageTitle}</h1>
       </header>
     );
   }
