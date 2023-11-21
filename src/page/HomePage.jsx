@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../component/Header";
 import { productSortedByPrice, products } from "../utilis/products-utilis";
 import SideBarre from "../component/sideBarre";
+import ProductCard from "../component/ProductCard";
 
 function Home() {
  
@@ -31,17 +32,21 @@ function Home() {
         <section>
           <h2>Les trois derniers produits cuisine : </h2>
 
-          {lastPublishedKitchenProducts.map((product) => {
+          {lastPublishedKitchenProducts.map((currentProductInLoop) => {
             return (
-              <article className="articlestyle">
-                <h3>{product.title}</h3>
-                <p>{product.price}</p>
-                {/* Ce lien permet à l'utilisateur de se rendre sur une autre page nommée "ProductPage" afin d'afficher les détails du produit choisi.
-                Ce lien fonctionne grâce à la fonction useParam  qui permet de se déplacer sur l'Id (présent dans l'Url)*/}
-                <Link to={`/products/${product.id}`}>
-                  <button>Voir le produit</button>
-                </Link>
-              </article>
+              // Appel de la composant ProducCard.jsx auquel on attribue le paramètre "currentProductInLoop" de la fonction ci-dessus
+              <ProductCard producToDisplay={currentProductInLoop} />
+
+              // Le text ci-dessous est placé dans le composant ProducCard car il est récurrent et donc appelable plusieurs fois sur le site.
+              // <article className="articlestyle">
+              //   <h3>{product.title}</h3>
+              //   <p>{product.price}</p>
+              //   {/* Ce lien permet à l'utilisateur de se rendre sur une autre page nommée "ProductPage" afin d'afficher les détails du produit choisi.
+              //   Ce lien fonctionne grâce à la fonction useParam  qui permet de se déplacer sur l'Id (présent dans l'Url)*/}
+              //   <Link to={`/products/${product.id}`}>
+              //     <button>Voir le produit</button>
+              //   </Link>
+              // </article>
             );
           })} 
         </section>

@@ -5,7 +5,7 @@ import './Header.scss';
 // Ce paramètre sera defini  sur chaque page ou le header doit apparaitre et sa valeur aparaitra au sein du paragraphe
 // que j'ai logé plus bas dans cette page
 
-function Header({pageTitle, isUserAuthenticated}) {
+function Header({pageTitle, isUserAuthenticated}) { // accolades pour tenir les parametres car considéré comme objet d'un tableau
     return (
       <header>
  

@@ -28,13 +28,14 @@ function ProductPage() {
     <>
       <Header pageTitle="Le produit détaillé"/>
       <main>
-      <SideBarre whatYouWant={productFound.title}/>
+      <SideBarre whatYouWant={`Vous consultez le produit : ${productFound.title}`} />
         {/* Si l'Id d'un produit existe, je peux afficher le détail du produit cliqué */}
         {productFound ? (
-          <article>
+ 
+          <article className="articlestyle">
             <h1>Detail du produit</h1>
             <p>{productFound.title}</p>
-            <p>{productFound.price}</p>
+            <p>{productFound.price} euros </p>
             <p>{productFound.description}</p>
             <p>{productFound.category}</p>
           </article>

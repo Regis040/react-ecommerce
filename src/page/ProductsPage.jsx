@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../component/Header";
 import { productSortedByPrice, products } from "../utilis/products-utilis";
 import SideBarre from "../component/sideBarre";
+import ProductCard from "../component/ProductCard";
 
 function ProductsPage() {
  
@@ -20,15 +21,20 @@ function ProductsPage() {
       <SideBarre whatYouWant="Vous consultez la listes des produits" />
         <h1>Les produits les moins chers pour les grosses pinces : </h1>
 {/* La foncion "productSortedByPrice" est importée  du fichier javascript*/}
-        {productSortedByPrice.map((product) => {
+        {productSortedByPrice.map((trucmuchbis) => {
           return (
-            <article className="articlestyle">
-              <h2>{product.title}</h2>
-              <p>{product.price} euros</p>
-              <Link to={`/products/${product.id}`}>
-                <button>Voir le produit</button>
-              </Link>
-            </article>
+            // appel du composant "ProducCard.jsx" auquel on attribue le paramètre de la fonction ci-dessus.
+            <ProductCard trucmuch="trucmuchbis" />
+
+            // Le texte ci-dessous a été déplacé dans le composant ProductCard.jsx car il est présent
+            // sur plusieurs pages. Cliquable sur cette, l'article prendra alors le détail de cet article.
+            // <article className="articlestyle">
+            //   <h2>{product.title}</h2>
+            //   <p>{product.price} euros</p>
+            //   <Link to={`/products/${product.id}`}>
+            //     <button>Voir le produit</button>
+            //   </Link>
+            // </article>
           );
         })}
       </main>
